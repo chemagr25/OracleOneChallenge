@@ -46,7 +46,6 @@ const showResult = (cant) => {
         result.style.display = "block"
         title.style.display = "none"
         res.style.justifyContent = "space-between"
-        txtUser.value = ""
         
     } else {
         illus.style.display = "none"
