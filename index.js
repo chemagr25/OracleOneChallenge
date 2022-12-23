@@ -12,27 +12,26 @@ const res = document.querySelector(".result")
 
 const regex = /^[a-z0-9\s]+$/
 const encrypt = (text) => {
-    const texto = text
+
     let newtext = ''
     if (regex.test(text)) {
-        newtext = texto.replace(/e/g, "enter")
-        newtext = newtext.replace(/i/g, "imes")
-        newtext = newtext.replace(/a/g, "ai")
-        newtext = newtext.replace(/o/g, "ober")
-        newtext = newtext.replace(/u/g, "ufat")
+        newtext = text.replaceAll(/e/g, "enter")
+            .replaceAll(/i/g, "imes")
+            .replaceAll(/a/g, "ai")
+            .replaceAll(/o/g, "ober")
+            .replaceAll(/u/g, "ufat")
     }
     return newtext
 }
 
 const decrypt = (text) => {
-    const texto = text
     let newtext = ''
     if (regex.test(text)) {
-        newtext = texto.replace(/enter/g, "e")
-        newtext = newtext.replace(/imes/g, "i")
-        newtext = newtext.replace(/ai/g, "a")
-        newtext = newtext.replace(/ober/g, "o")
-        newtext = newtext.replace(/ufat/g, "u")
+        newtext = text.replaceAll(/enter/g, "e")
+            .replaceAll(/imes/g, "i")
+            .replaceAll(/ai/g, "a")
+            .replaceAll(/ober/g, "o")
+            .replaceAll(/ufat/g, "u")
     }
     return newtext
 }
@@ -46,7 +45,7 @@ const showResult = (cant) => {
         result.style.display = "block"
         title.style.display = "none"
         res.style.justifyContent = "space-between"
-        
+
     } else {
         illus.style.display = "none"
         msg2.innerHTML = "Error, revisa el texto"
@@ -60,7 +59,7 @@ const showResult = (cant) => {
 btnCopy.addEventListener("click", () => {
     result.select()
     document.execCommand("copy");
-  
+
 })
 
 btnEncrypt.addEventListener("click", () => {
@@ -73,3 +72,4 @@ btnDecrypt.addEventListener("click", () => {
     showResult(result.value.length)
 
 })
+
