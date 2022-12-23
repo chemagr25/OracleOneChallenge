@@ -46,6 +46,8 @@ const showResult = (cant) => {
         result.style.display = "block"
         title.style.display = "none"
         res.style.justifyContent = "space-between"
+        txtUser.value = ""
+        
     } else {
         illus.style.display = "none"
         msg2.innerHTML = "Error, revisa el texto"
@@ -59,7 +61,7 @@ const showResult = (cant) => {
 btnCopy.addEventListener("click", () => {
     result.select()
     document.execCommand("copy");
-    gaitober
+  
 })
 
 btnEncrypt.addEventListener("click", () => {
